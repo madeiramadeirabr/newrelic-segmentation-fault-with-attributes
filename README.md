@@ -43,7 +43,6 @@ With this, we provide the `test.sh` script that enables the execution of the fol
 | When using version `10.19.0.9` of the NewRelic PHP Agent without any command using the AsCommand attribute, no failure occurs. | php-newrelic-test-agent-10.19 | No | The application command list is displayed correctly with just one command. And no errors are written to the error in the `/var/log/newrelic/php_agent.log` file. |
 | When using version `10.16.0.5` of NewRelic PHP Agent with at least one command using the `AsCommand` attribute, no failure occurs. | php-newrelic-test-agent-10.16 | Yes | The application command list is displayed correctly with two commands. And no errors are written to the error in the `/var/log/newrelic/php_agent.log` file. |
 | When using version `10.16.0.5` of the NewRelic PHP Agent without any command using the AsCommand attribute, no failure occurs. | php-newrelic-test-agent-10.16 | No | The application command list is displayed correctly with just one command. And no errors are written to the error in the `/var/log/newrelic/php_agent.log` file. |
-| 
 
 ## Running
 After cloning the repository:
