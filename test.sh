@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -e "Testing Segmentation Fault with the combination of PHP 8 Attributes and NewRelic PHP agent\n\n"
-read -p "Use the version of NewRelic PHP agent with a bug (10.19.0.9) or the version without (10.16.0.5)? (1 = '10.19.0.9' | 0 = '10.16.0.5') " NEWRELIC_VERSION
+read -p "Use the version of NewRelic PHP agent with a bug (10.19.0.9) or the version without the bug (10.16.0.5)? (1 = '10.19.0.9' | 0 = '10.16.0.5') " NEWRELIC_VERSION
 
 if [[ "$NEWRELIC_VERSION" == "1" ]]; then
     NEWRELIC_VERSION='10.19'
