@@ -1,0 +1,15 @@
+version: "3.2"
+
+services:
+  php-cli:
+    container_name: php-newrelic-test
+    image: php-newrelic:8-alpine3.13
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY}
+    volumes:
+      - .:/application
+    ports:
+      - "8080:8080"
