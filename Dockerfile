@@ -3,6 +3,7 @@ FROM php:8-cli-alpine3.13
 
 ARG NEW_RELIC_LICENSE_KEY
 ARG NEW_RELIC_APP_NAME=ExampleApp
+ARG NEWRELIC_VERSION=10.19.0.9
 
 # Prepare required directories for Newrelic installation
 RUN mkdir -p /var/log/newrelic /var/run/newrelic && \
@@ -10,7 +11,6 @@ RUN mkdir -p /var/log/newrelic /var/run/newrelic && \
     chmod -R g+ws /tmp /var/log/newrelic/ /var/run/newrelic/ && \
     chown -R 1001:0 /tmp /var/log/newrelic/ /var/run/newrelic/ && \
     # Download and install Newrelic binary
-    export NEWRELIC_VERSION="10.19.0.9" && \
     export NEWRELIC_VERSION_NAME="newrelic-php5-${NEWRELIC_VERSION}-linux-musl" && \
     cd /tmp && curl -sS "https://download.newrelic.com/php_agent/archive/${NEWRELIC_VERSION}/${NEWRELIC_VERSION_NAME}.tar.gz" | gzip -dc | tar xf - && \
     cd "${NEWRELIC_VERSION_NAME}" && \

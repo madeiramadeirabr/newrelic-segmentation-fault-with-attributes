@@ -1,9 +1,9 @@
 version: "3.2"
 
 services:
-  php-cli:
-    container_name: php-newrelic-test
-    image: php-newrelic:8-alpine3.13
+  php-cli-agent10.19:
+    container_name: php-newrelic-test-agent-10.19
+    image: php-newrelic:8-alpine3.13-agent10.19
     build:
       context: ./
       dockerfile: Dockerfile
@@ -13,3 +13,17 @@ services:
       - .:/application
     ports:
       - "8080:8080"
+
+  php-cli-agent10.16:
+    container_name: php-newrelic-test-agent-10.16
+    image: php-newrelic:8-alpine3.13-agent10.16
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY}
+        NEWRELIC_VERSION: '10.16.0.5'
+    volumes:
+      - .:/application
+    ports:
+      - "8081:8080"
