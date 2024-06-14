@@ -1,0 +1,16 @@
+name: Application security
+
+on:
+  push:
+    branches:
+      - main
+      - production
+      - master
+      
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  scans:
+      uses: madeiramadeirabr/private_action-information-security-validators/.github/workflows/main.yml@production
+      secrets: inherit
